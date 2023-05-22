@@ -24,11 +24,11 @@
     <body>
         <header>
             <nav>
-                <a href="">Welcone</a>
-                <a href="">Accounts</a>
-                <a href="">Profile</a>
-                <a href="">Contacts</a>
-                <a href="">Main Page</a>
+                <a href="{{route('welcome')}}">Welcone</a>
+                <a href="{{route('accounts')}}">Accounts</a>
+                <a href="{{route('profile')}}">Profile</a>
+                <a href="{{route('contacts')}}">Contacts</a>
+                <a href="{{route('mainpage')}}">Main Page</a>
             
             </nav>
 

@@ -17,24 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 
    //echo'homepage';
-});
+})->name('welcome');
 Route::get('/profile', function () {
     return view('profile');
 
     //echo'my profile';
-});
+})->name('profile');
 Route::get('/accounts', function () {
    return view('accounts');
 
   // echo'accounts';
-});
+})->name('accounts');
 Route::get('/contacts', function () {
    return view('contacts');
 
    //echo'my contacts';
-});
+})->name('contacts');
 Route::get('/mainpage', function () {
     return view('mainpage');
 
    // echo'main page  ';
-});
+})->name('mainpage');
