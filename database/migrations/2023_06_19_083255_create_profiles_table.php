@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->enum('gender', ['male', 'female']);
             $table->timestamps();
         });
     }

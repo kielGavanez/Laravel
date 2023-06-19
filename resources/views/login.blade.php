@@ -7,13 +7,31 @@
     <title>Document</title>
 </head>
 <body>
+    @extends('templates.app')
 
-    <h1>Log In</h1>
+    @section('content')
+        
     
-    <form action="">
-        <div></div>
+    <h1>Log In</h1>
+    @error('message')
+        {{ $message }}
+        
+    @enderror
+        
+    
+    <form action="{{route('login.submit')}}" method="post">
+        @csrf
+        <div>
+            <label for="username">username: </label>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <label for="password">password: </label>
+            <input type="password" id="password">
+        </div>
+        <button>Submit</button>
 
     </form>
-
+    @endsection
 </body>
 </html>

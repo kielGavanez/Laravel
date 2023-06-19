@@ -11,8 +11,18 @@
         <a href="{{route('home')}}">Home</a>
         <a href="{{route('profile')}}">Profile</a>
         <a href="{{route('tasks')}}">Tasks</a>
+        @if(auth()->check())
+        <a href="{{route('logout')}}">Log Out</a>
+        @else    
         <a href="{{route('login')}}">Log In</a>
+        @endif
+
+        <a href="{{route('register')}}">Sign Up</a>
     </header>
-    @yield('content')
+   
+    
+@yield('content')
+
+    
 </body>
 </html>
