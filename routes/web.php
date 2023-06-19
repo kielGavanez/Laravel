@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TasksController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'Index'])->name('home');
+
+Route::get('/profile', [ProfileController::class, 'Index'])->name('profile');
+
+Route::get('/tasks', [TasksController::class, 'Index'])->name('tasks');
+
+Route::get('/login', [AuthController::class, 'Index'])->name('login');
+
+Route::post('/login', [AuthController::class, 'Index'])->name('login.submit');
