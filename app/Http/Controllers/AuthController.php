@@ -37,5 +37,32 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
+    public function registration(){
+
+        return view('registration');
+
+    }
+
+    public function register(Request $request){
+
+        $validate = $request->validate([
+
+            'name' => 'required|max:30',
+            'username' => 'required|unique:users|min:5|max:20',
+            'password' => 'required|min:5|'//max:20|'            
+        ]);
+
+        //encrypt password
+
+        $validate['password'] = Hash::make($validate['password']);
+
+        $user = User::create($validate);
+
+        if($user){
+            return view('/login');
+        }
+
+    }
+
     
 }

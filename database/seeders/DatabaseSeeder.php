@@ -16,7 +16,15 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory()->create([
             'name' => 'Administrator',
-            'username' => 'admin',            
+            'username' => 'admin',     
+                   
+
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'User',
+            'username' => 'user',     
+                   
 
         ]);
         

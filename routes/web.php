@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\RegController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TasksController;
@@ -29,6 +28,6 @@ Route::get('/login', [AuthController::class, 'Index'])->name('login');
 
 Route::post('/login', [AuthController::class, 'Login'])->name('login.submit');
 
-Route::get('/register', [RegController::class, 'Index'])->name('register');
+Route::get('/register', [AuthController::class, 'registration'])->name('register');
 
-Route::post('/register', [RegController::class, 'Index'])->name('register.go');
+Route::post('/register', [AuthController::class, 'register'])->name('register.go');
